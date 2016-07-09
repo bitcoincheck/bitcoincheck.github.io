@@ -13,9 +13,9 @@ xhttp.onreadystatechange = function(){
 xhttp.open("GET", "https://crossorigin.me/https://www.bitstamp.net/api/v2/ticker/btcusd/", true);
 xhttp.send();
 }
-function Update()
-{
-GetNewPrice();
+
+setInterval(function(){
+	GetNewPrice();
 setTimeout(function(){     
 for (ii = 1; ii < 6; ii++) {
     for (i = 1; i < 16; i++)	{
@@ -25,9 +25,7 @@ for (ii = 1; ii < 6; ii++) {
 TurnOn(pricern[0], 1);
 TurnOn(pricern[1], 2);
 TurnOn(pricern[2], 3);
-TurnOn(pricern[4], 5); }, 1000);
-}
-setInterval(Update(),2500);
+TurnOn(pricern[4], 5); }, 1000); },2500);
 
 function TurnOn(number, group)
 {

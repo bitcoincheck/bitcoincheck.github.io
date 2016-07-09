@@ -1,4 +1,6 @@
 var pricern;
+var oldprice;
+var first = true;
 function GetNewPrice()
 {
 xhttp = new XMLHttpRequest();
@@ -15,6 +17,7 @@ xhttp.setRequestHeader('Content-Type', 'application/json');
 xhttp.send();
 }
 setInterval(function(){
+	oldprice = pricern;
 	GetNewPrice();
 setTimeout(function(){     
 for (ii = 1; ii < 6; ii++) {
@@ -25,12 +28,19 @@ for (ii = 1; ii < 6; ii++) {
 TurnOn(pricern[0], 1);
 TurnOn(pricern[1], 2);
 TurnOn(pricern[2], 3);
-TurnOn(pricern[4], 5); }, 100); },5000);
+TurnOn(pricern[4], 5);
+if(first === true) { first = false } else {
+if(pricern >= oldprice){ TurnOn("up", 6) } else {
+	TurnOn("down", 6);
+	
+}	
+	
+} }, 100); },5000);
 function DoThing()
 {
 	GetNewPrice();
 setTimeout(function(){     
-for (ii = 1; ii < 6; ii++) {
+for (ii = 1; ii < 7; ii++) {
     for (i = 1; i < 16; i++)	{
 		document.getElementsByName(ii+"-"+i)[0].style = "background: #eee;";
 	} 
@@ -45,6 +55,16 @@ function TurnOn(number, group)
 {
 
 document.getElementsByName("4-14")[0].style = "background: #000;";
+if(number == "up") {
+document.getElementsByName(group+"-2")[0].style = "background: #0a0;";
+document.getElementsByName(group+"-4")[0].style = "background: #0a0;";
+document.getElementsByName(group+"-6")[0].style = "background: #0a0;";	
+}
+if(number == "down") {
+document.getElementsByName(group+"-10")[0].style = "background: #a00;";
+document.getElementsByName(group+"-12")[0].style = "background: #a00;";
+document.getElementsByName(group+"-14")[0].style = "background: #a00;";	
+}
 if(number == "0") {
 document.getElementsByName(group+"-1")[0].style = "background: #000;";
 document.getElementsByName(group+"-2")[0].style = "background: #000;";

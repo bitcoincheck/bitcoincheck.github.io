@@ -25,7 +25,7 @@ for (ii = 1; ii < 6; ii++) {
 TurnOn(pricern[0], 1);
 TurnOn(pricern[1], 2);
 TurnOn(pricern[2], 3);
-TurnOn(pricern[4], 5); }, 100); },250);
+TurnOn(pricern[4], 5); }, 100); },6000);
 
 function TurnOn(number, group)
 {

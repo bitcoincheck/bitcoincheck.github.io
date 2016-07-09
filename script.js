@@ -19,7 +19,7 @@ setInterval(function(){
 setTimeout(function(){     
 for (ii = 1; ii < 6; ii++) {
     for (i = 1; i < 16; i++)	{
-		document.getElementsByName(ii+"-"+i)[0].style = "background: #aaa;";
+		document.getElementsByName(ii+"-"+i)[0].style = "background: #eee;";
 	} 
 }
 TurnOn(pricern[0], 1);
@@ -32,7 +32,7 @@ function DoThing()
 setTimeout(function(){     
 for (ii = 1; ii < 6; ii++) {
     for (i = 1; i < 16; i++)	{
-		document.getElementsByName(ii+"-"+i)[0].style = "background: #aaa;";
+		document.getElementsByName(ii+"-"+i)[0].style = "background: #eee;";
 	} 
 }
 TurnOn(pricern[0], 1);

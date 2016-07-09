@@ -14,7 +14,6 @@ xhttp.open("GET", "https://www.bitstamp.net/api/v2/ticker/btcusd/", true);
 xhttp.setRequestHeader('Content-Type', 'application/json');
 xhttp.send();
 }
-
 setInterval(function(){
 	GetNewPrice();
 setTimeout(function(){     
@@ -26,7 +25,21 @@ for (ii = 1; ii < 6; ii++) {
 TurnOn(pricern[0], 1);
 TurnOn(pricern[1], 2);
 TurnOn(pricern[2], 3);
-TurnOn(pricern[4], 5); }, 100); },6000);
+TurnOn(pricern[4], 5); }, 100); },5000);
+function DoThing()
+{
+	GetNewPrice();
+setTimeout(function(){     
+for (ii = 1; ii < 6; ii++) {
+    for (i = 1; i < 16; i++)	{
+		document.getElementsByName(ii+"-"+i)[0].style = "background: #aaa;";
+	} 
+}
+TurnOn(pricern[0], 1);
+TurnOn(pricern[1], 2);
+TurnOn(pricern[2], 3);
+TurnOn(pricern[4], 5); }, 100);
+}
 
 function TurnOn(number, group)
 {

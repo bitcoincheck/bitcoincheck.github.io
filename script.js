@@ -20,7 +20,7 @@ setInterval(function(){
 	oldprice = pricern;
 	GetNewPrice();
 setTimeout(function(){     
-for (ii = 1; ii < 6; ii++) {
+for (ii = 1; ii < 7; ii++) {
     for (i = 1; i < 16; i++)	{
 		document.getElementsByName(ii+"-"+i)[0].style = "background: #eee;";
 	} 
@@ -32,8 +32,8 @@ TurnOn(pricern[4], 5);
 if(first === true) { first = false } else {
 if(pricern >= oldprice){ TurnOn("up", 6) } else {
 	TurnOn("down", 6);
-	
-}	
+	 
+}	  
 	
 } }, 100); },5000);
 function DoThing()

@@ -10,7 +10,7 @@ xhttp.onreadystatechange = function(){
    
 	}
 }
-xhttp.open("GET", "http://cors.io/?u=https://www.bitstamp.net/api/v2/ticker/btcusd/", true);
+xhttp.open("GET", "https://crossorigin.me/https://www.bitstamp.net/api/v2/ticker/btcusd/", true);
 xhttp.send();
 }
 function Update()

@@ -1,5 +1,4 @@
 var pricern;
-document.domain = 'bitstamp.net';
 function GetNewPrice()
 {
 xhttp = new XMLHttpRequest();
